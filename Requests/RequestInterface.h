@@ -11,10 +11,7 @@ class RequestInterface {
 
 public:
     virtual ~RequestInterface() { }
-
-public:
     RequestInterface() { }
-
     virtual bool processReques();
 
 protected:

@@ -12,6 +12,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RegistrationBehavior.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestInterface.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/State.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/VerificationState.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/VerificationState.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ServerConnection.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ServerConnection.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TCPClientConnectionFactory.cpp" isTestSource="false" />
