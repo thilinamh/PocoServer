@@ -6,7 +6,7 @@
 #define POCOSERVER_REGISTRATIONSTATE_H
 
 #include "State.h"
-#include "../RegistrationBehavior.h"
+#include "../Behaviours/RegistrationBehavior.h"
 
 class RegistrationState :public State{
 
@@ -15,7 +15,7 @@ public:
     virtual void processRequest(char *data) override;
 
 private:
-    RegistrationBehavior
+    RegistrationBehavior* behave; // enterprise or community
 };
 
 

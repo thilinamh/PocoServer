@@ -10,8 +10,8 @@ set(SOURCE_FILES
         TCPClientConnectionFactory.cpp TCPClientConnectionFactory.h
         UserStructure/User.cpp UserStructure/User.h
         ClientRequest.cpp ClientRequest.h
-        Requests/RequestInterface.h Requests/RegistrationBehavior.cpp
-        Requests/RegistrationBehavior.h Requests/CommunityRequest.cpp
+        Requests/RequestInterface.h Requests/Behaviours/RegistrationBehavior.cpp
+        Requests/Behaviours/RegistrationBehavior.h Requests/CommunityRequest.cpp
         Requests/CommunityRequest.h Requests/EnterpriseRequest.cpp
         Requests/EnterpriseRequest.h Requests/RequestState/State.h
         Requests/RequestState/RegistrationState.cpp Requests/RequestState/RegistrationState.h
