@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RegistrationBehavior.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestBehaviour.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestBehaviour.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestInterface.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.h" isTestSource="false" />

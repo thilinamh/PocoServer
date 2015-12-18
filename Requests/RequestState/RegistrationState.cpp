@@ -4,6 +4,7 @@
 
 #include "RegistrationState.h"
 
-void RegistrationState::processRequest() {
+
+void RegistrationState::processRequest(char *data) {
 
 }

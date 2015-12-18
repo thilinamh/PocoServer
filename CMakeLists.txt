@@ -9,7 +9,15 @@ set(SOURCE_FILES
         ServerConnection.cpp ServerConnection.h
         TCPClientConnectionFactory.cpp TCPClientConnectionFactory.h
         UserStructure/User.cpp UserStructure/User.h
-ClientRequest.cpp ClientRequest.h Requests/RequestInterface.h Requests/RegistrationBehavior.cpp Requests/RegistrationBehavior.h Requests/CommunityRequest.cpp Requests/CommunityRequest.h Requests/EnterpriseRequest.cpp Requests/EnterpriseRequest.h Requests/RequestState/State.h Requests/RequestState/RegistrationState.cpp Requests/RequestState/RegistrationState.h Requests/RequestState/VerificationState.cpp Requests/RequestState/VerificationState.h Requests/RequestState/InitalState.cpp Requests/RequestState/InitalState.h)
+        ClientRequest.cpp ClientRequest.h
+        Requests/RequestInterface.h Requests/RegistrationBehavior.cpp
+        Requests/RegistrationBehavior.h Requests/CommunityRequest.cpp
+        Requests/CommunityRequest.h Requests/EnterpriseRequest.cpp
+        Requests/EnterpriseRequest.h Requests/RequestState/State.h
+        Requests/RequestState/RegistrationState.cpp Requests/RequestState/RegistrationState.h
+        Requests/RequestState/VerificationState.cpp Requests/RequestState/VerificationState.h
+        Requests/RequestState/InitalState.cpp Requests/RequestState/InitalState.h
+        Requests/RequestBehaviour.cpp Requests/RequestBehaviour.h Requests/RequestBehaviour.cpp Requests/RequestBehaviour.h)
 add_executable(PocoServer ${SOURCE_FILES})
 
 #INCLUDE_DIRECTORIES(/usr/local/include/)

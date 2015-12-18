@@ -6,11 +6,16 @@
 #define POCOSERVER_REGISTRATIONSTATE_H
 
 #include "State.h"
+#include "../RegistrationBehavior.h"
 
 class RegistrationState :public State{
 
 public:
-    virtual void processRequest() override;
+
+    virtual void processRequest(char *data) override;
+
+private:
+    RegistrationBehavior
 };
 
 
