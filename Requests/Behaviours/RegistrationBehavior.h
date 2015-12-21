@@ -5,7 +5,7 @@
 #ifndef POCOSERVER_REGRQUEST_H
 #define POCOSERVER_REGRQUEST_H
 
-#include "RequestInterface.h"
+#include "../RequestInterface.h"
 
 class RegistrationBehavior : public RequestInterface {
 

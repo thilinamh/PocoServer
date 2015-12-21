@@ -8,7 +8,7 @@
 class State{
 
 public:
-    virtual State() { }
+    State() { }
 
     virtual void processRequest(char* data)=0;
 

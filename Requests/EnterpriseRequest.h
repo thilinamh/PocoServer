@@ -6,7 +6,6 @@
 #define POCOSERVER_ENTERPRISEREQUEST_H
 
 #include "RequestInterface.h"
-#include ""
 class EnterpriseRequest: public RequestInterface {
 
 private:

@@ -5,14 +5,14 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestInterface.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.h" isTestSource="false" />
@@ -37,12 +37,18 @@
       <library name="Header Search Paths">
         <CLASSES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.3/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.3/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>

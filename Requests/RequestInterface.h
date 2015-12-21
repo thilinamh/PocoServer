@@ -12,7 +12,7 @@ class RequestInterface {
 public:
     virtual ~RequestInterface() { }
     RequestInterface() { }
-    virtual bool processReques();
+    virtual bool processReques()=0;
 
 protected:
     char requestCode[3];
