@@ -5,10 +5,18 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/ConferenceBehaviourEnterprise.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/ConferenceBehaviourEnterprise.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehaviourCommunity.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehaviourCommunity.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehaviourEnterprise.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehaviourEnterprise.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/VerificationBehaviourCommunity.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/VerificationBehaviourCommunity.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.cpp" isTestSource="false" />
@@ -25,6 +33,10 @@
       <sourceFolder url="file://$MODULE_DIR$/ServerConnection.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TCPClientConnectionFactory.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TCPClientConnectionFactory.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/CommunityUser.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/CommunityUser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
@@ -37,18 +49,12 @@
       <library name="Header Search Paths">
         <CLASSES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.3/include" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.3/include" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>

@@ -11,6 +11,8 @@
 #include "../ServerConnection.h"
 #include "Poco/Net/StreamSocket.h"
 #include "../Requests/RequestInterface.h"
+#include "../Requests/RequestState/State.h"
+#include "../Requests/Behaviours/RegistrationBehavior.h"
 
 using Poco::Net::StreamSocket;
 using std::string;
@@ -26,11 +28,15 @@ public:
 
     ServerConnection & GetTcpConnection() const;
 
+protected:
+    RegistrationBehavior* regBehaviour;
+
 private:
     ServerConnection* tcpConnection;
     string uid;
     string uuid;
     RequestInterface* request;
+    State* state;
 
 };
 

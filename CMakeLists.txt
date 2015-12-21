@@ -17,7 +17,7 @@ set(SOURCE_FILES
         Requests/RequestState/RegistrationState.cpp Requests/RequestState/RegistrationState.h
         Requests/RequestState/VerificationState.cpp Requests/RequestState/VerificationState.h
         Requests/RequestState/InitalState.cpp Requests/RequestState/InitalState.h
-        Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h)
+        Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RegistrationBehaviourEnterprise.cpp Requests/Behaviours/RegistrationBehaviourEnterprise.h Requests/Behaviours/RegistrationBehaviourCommunity.cpp Requests/Behaviours/RegistrationBehaviourCommunity.h UserStructure/EnterpriseUser.cpp UserStructure/EnterpriseUser.h UserStructure/CommunityUser.cpp UserStructure/CommunityUser.h Requests/Behaviours/ConferenceBehaviourEnterprise.cpp Requests/Behaviours/ConferenceBehaviourEnterprise.h Requests/Behaviours/VerificationBehaviourCommunity.cpp Requests/Behaviours/VerificationBehaviourCommunity.h)
 add_executable(PocoServer ${SOURCE_FILES})
 
 #INCLUDE_DIRECTORIES(/usr/local/include/)

@@ -1,0 +1,14 @@
+//
+// Created by user on 12/21/15.
+//
+
+#ifndef POCOSERVER_CONFERENCEBEHAVIOURENTERPRISE_H
+#define POCOSERVER_CONFERENCEBEHAVIOURENTERPRISE_H
+
+
+class ConferenceBehaviourEnterprise {
+
+};
+
+
+#endif //POCOSERVER_CONFERENCEBEHAVIOURENTERPRISE_H

@@ -15,7 +15,7 @@ public:
     virtual void processRequest(char *data) override;
 
 private:
-    RegistrationBehavior* behave; // enterprise or community
+    RegistrationBehavior* behavior; // enterprise or community
 };
 
 
