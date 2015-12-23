@@ -4,7 +4,7 @@
  * 
  * Created on December 11, 2015, 5:22 PM
  */
-
+#include <memory>
 #include "TCPClientConnectionFactory.h"
 #include "UserStructure/User.h"
 
@@ -19,8 +19,9 @@ ClientConnectionFactory::~ClientConnectionFactory() {
 }
 
 TCPServerConnection*  ClientConnectionFactory::createConnection(const StreamSocket& socket){
-   User* usr = new User(socket);
-  
-   return dynamic_cast<TCPServerConnection*>(&(usr->GetTcpConnection()));
+   shared_ptr<User> usr (new User(socket));
+   usr->bindWithServer();
+
+   return dynamic_cast<TCPServerConnection*>(&(usr->getServerConnection()));
 }
 

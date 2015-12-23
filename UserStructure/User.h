@@ -8,6 +8,7 @@
 #ifndef USER_H
 #define	USER_H
 #include <string>
+#include <memory>
 #include "../ServerConnection.h"
 #include "Poco/Net/StreamSocket.h"
 #include "../Requests/RequestInterface.h"
@@ -15,26 +16,29 @@
 #include "../Requests/Behaviours/RegistrationBehavior.h"
 
 using Poco::Net::StreamSocket;
-using std::string;
+using namespace std;
 
 class ServerConnection;
 
-
-class User {
+#pragma db object polymorphic
+class User: public enable_shared_from_this<User> {
 public:
     User(const StreamSocket& socket);
     User(const User& orig);
     virtual ~User();
-
-    ServerConnection & GetTcpConnection() const;
+    /**
+     * tcpServerConnection will be given the current User object
+     * */
+    void bindWithServer();
+    ServerConnection &getServerConnection() const;
 
 protected:
     RegistrationBehavior* regBehaviour;
 
 private:
     ServerConnection* tcpConnection;
-    string uid;
-    string uuid;
+    std::string uid;
+    std::string uuid;
     RequestInterface* request;
     State* state;
 

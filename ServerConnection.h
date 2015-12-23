@@ -9,6 +9,7 @@
 #define	TCPCONNECTION_H
 #include "Poco/Net/TCPServerConnection.h"
 #include <Poco/Net/StreamSocket.h>
+#include <memory>
 #include "Poco/StringTokenizer.h"
 
 //#include "User.h"
@@ -24,7 +25,7 @@ public:
      */
     ServerConnection(const StreamSocket& client);
     
-    /** TCPServer will invoke this when connection ended.
+    /** TCPServer will invoke distructor when connection ended.
      * Therefore do not delete the object by yourself
      */
             
@@ -47,13 +48,13 @@ public:
      */
     void setConnectionCheckParams(int idle_time_from_last_packet, int ack_packets, int ack_interval);
    
-    void setContext (User* context);
+    void setContext (std::shared_ptr<User> context);
     
 
 
 private:
  
-    User* context;
+    std::shared_ptr<User> context;
 
 };
 

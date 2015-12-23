@@ -14,11 +14,15 @@ using Poco::BufferedStreamBuf;
 using namespace std;
 
 ServerConnection::ServerConnection(const StreamSocket& client) : TCPServerConnection(client) {
-    std::cout << "client connection constuctor 0" << endl;
+    std::cout << "Server connection constuctor"<<client.peerAddress().toString() << endl;
     
 }
-void ServerConnection::setContext(User* context) {
+void ServerConnection::setContext(shared_ptr<User> context) {
+    std::cout<<"user assigned"<<endl;
         this->context = context;
+    // this assignement is valid until context is a shared_ptr;
+    // if you receive a raw ptr, you need to use reset(raw_ptr) method
+
  }
 
 /*ServerConnection::ServerConnection(const ServerConnection& orig) {
@@ -27,7 +31,6 @@ void ServerConnection::setContext(User* context) {
 
 ServerConnection::~ServerConnection() {
     std::cout<<"ServerConnection distructor"<<endl;
-    delete this->context;
 }
 
 void ServerConnection::setConnectionCheckParams(int idle_time, int ack_packets, int ack_interval){
@@ -60,7 +63,7 @@ void ServerConnection::run() {
         duf<<buf;
         std::cout << duf.str() << endl;
         //r.decodeRequest(duf);
-        char* decodedC = r.decodeRequest(&buf[4]);
+        //char* decodedC = r.decodeRequest(&buf[4]);
         if (size==0) {
             //exit = true;
             this->socket().close();
