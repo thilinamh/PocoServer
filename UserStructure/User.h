@@ -25,18 +25,23 @@ class User: public enable_shared_from_this<User> {
 public:
     User(const StreamSocket& socket);
     User(const User& orig);
-    virtual ~User();
+    virtual ~User(); // essential for polymorphic behaviour
     /**
      * tcpServerConnection will be given the current User object
      * */
     void bindWithServer();
     ServerConnection &getServerConnection() const;
+    virtual RegistrationBehavior* getRegBehaviour() const;
+
+
+
 
 protected:
     RegistrationBehavior* regBehaviour;
 
 private:
     ServerConnection* tcpConnection;
+    #pragma db id
     std::string uid;
     std::string uuid;
     RequestInterface* request;
