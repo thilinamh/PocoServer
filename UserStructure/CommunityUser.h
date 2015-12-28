@@ -5,7 +5,7 @@
 #ifndef POCOSERVER_COMMUNITYUSER_H
 #define POCOSERVER_COMMUNITYUSER_H
 
-#include "User.h"
+#include "User.hxx"
 #include "../Requests/Behaviours/RegistrationBehavior.h"
 #include "../Requests/Behaviours/VerificationBehaviourCommunity.h"
 

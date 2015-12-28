@@ -38,7 +38,7 @@
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.hxx" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Utils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />

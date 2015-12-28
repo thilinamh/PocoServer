@@ -8,7 +8,7 @@ set(SOURCE_FILES
         Utils.cpp Utils.h
         ServerConnection.cpp ServerConnection.h
         TCPClientConnectionFactory.cpp TCPClientConnectionFactory.h
-        UserStructure/User.cpp UserStructure/User.h
+        UserStructure/User.cpp UserStructure/User.hxx
         ClientRequest.cpp ClientRequest.h
         Requests/RequestInterface.h Requests/Behaviours/RegistrationBehavior.cpp
         Requests/Behaviours/RegistrationBehavior.h Requests/CommunityRequest.cpp

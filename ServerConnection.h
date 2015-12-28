@@ -9,7 +9,7 @@
 #define	TCPCONNECTION_H
 #include "Poco/Net/TCPServerConnection.h"
 #include <Poco/Net/StreamSocket.h>
-#include <memory>
+#include <tr1/memory>
 #include "Poco/StringTokenizer.h"
 
 //#include "User.h"
@@ -48,13 +48,13 @@ public:
      */
     void setConnectionCheckParams(int idle_time_from_last_packet, int ack_packets, int ack_interval);
    
-    void setContext (std::shared_ptr<User> context);
+    void setContext (std::tr1::shared_ptr<User> context);
     
 
 
 private:
  
-    std::shared_ptr<User> context;
+    std::tr1::shared_ptr<User> context;
 
 };
 

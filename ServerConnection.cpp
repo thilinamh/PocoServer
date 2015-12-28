@@ -6,7 +6,7 @@
  */
 
 #include "ServerConnection.h"
-#include "UserStructure/User.h"
+#include "UserStructure/User.hxx"
 #include "ClientRequest.h"
 #include <iostream>
 #include <Poco/BufferedStreamBuf.h>
@@ -17,7 +17,7 @@ ServerConnection::ServerConnection(const StreamSocket& client) : TCPServerConnec
     std::cout << "Server connection constuctor"<<client.peerAddress().toString() << endl;
     
 }
-void ServerConnection::setContext(shared_ptr<User> context) {
+void ServerConnection::setContext(std::tr1::shared_ptr<User> context) {
     std::cout<<"user assigned"<<endl;
         this->context = context;
     // this assignement is valid until context is a shared_ptr;

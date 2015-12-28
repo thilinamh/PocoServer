@@ -6,7 +6,7 @@
  */
 #include <memory>
 #include "TCPClientConnectionFactory.h"
-#include "UserStructure/User.h"
+#include "UserStructure/User.hxx"
 
 //#include "ServerConnection.h"
 ClientConnectionFactory::ClientConnectionFactory() {
