@@ -9,6 +9,7 @@ set(SOURCE_FILES
         ServerConnection.cpp ServerConnection.h
         TCPClientConnectionFactory.cpp TCPClientConnectionFactory.h
         UserStructure/User.cpp UserStructure/User.hxx
+        UserStructure/User-odb.cxx UserStructure/User-odb.hxx
         ClientRequest.cpp ClientRequest.h
         Requests/RequestInterface.h Requests/Behaviours/RegistrationBehavior.cpp
         Requests/Behaviours/RegistrationBehavior.h Requests/CommunityRequest.cpp
@@ -20,7 +21,7 @@ set(SOURCE_FILES
         Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RegistrationBehaviourEnterprise.cpp Requests/Behaviours/RegistrationBehaviourEnterprise.h Requests/Behaviours/RegistrationBehaviourCommunity.cpp Requests/Behaviours/RegistrationBehaviourCommunity.h UserStructure/EnterpriseUser.cpp UserStructure/EnterpriseUser.h UserStructure/CommunityUser.cpp UserStructure/CommunityUser.h Requests/Behaviours/ConferenceBehaviourEnterprise.cpp Requests/Behaviours/ConferenceBehaviourEnterprise.h Requests/Behaviours/VerificationBehaviourCommunity.cpp Requests/Behaviours/VerificationBehaviourCommunity.h)
 add_executable(PocoServer ${SOURCE_FILES})
 
-#INCLUDE_DIRECTORIES(/usr/local/include/)
+#INCLUDE_DIRECTORIES(/usr/local/include/odb)
 #LINK_DIRECTORIES(/usr/local/lib)
 #TARGET_LINK_LIBRARIES(TestPoco PocoFoundation PocoNet)
 
@@ -35,6 +36,8 @@ add_executable(PocoServer ${SOURCE_FILES})
 find_library(POCO_FOUNDATION PocoFoundation)
 find_library(CRYPTO crypto)
 find_library(SSL ssl)
+find_library(ODB_Mysql odb-mysql)
+find_library(ODB odb)
 
 #${CRYPTO} ${SSL}
-target_link_libraries(PocoServer ${POCO_FOUNDATION}  PocoNet ${CRYPTO} ${SSL}  )
+target_link_libraries(PocoServer ${POCO_FOUNDATION}  PocoNet ${CRYPTO} ${SSL} ${ODB} ${ODB_Mysql} )

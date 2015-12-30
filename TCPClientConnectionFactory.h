@@ -12,6 +12,8 @@
 #include "Poco/Net/TCPServerConnection.h"
 #include "Poco/Net/StreamSocket.h"
 
+#include <odb/database.hxx>
+#include <odb/mysql/database.hxx>
 
 using Poco::Net::TCPServerConnectionFactory;
 using Poco::Net::TCPServerConnection;

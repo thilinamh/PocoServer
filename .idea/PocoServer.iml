@@ -37,6 +37,8 @@
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/CommunityUser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/EnterpriseUser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/User-odb.cxx" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UserStructure/User-odb.hxx" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/UserStructure/User.hxx" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />

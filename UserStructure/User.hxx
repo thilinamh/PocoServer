@@ -8,7 +8,7 @@
 #ifndef USER_H
 #define	USER_H
 #include <string>
-#include <tr1/memory>
+#include <memory>
 #include <odb/core.hxx>
 #include "../ServerConnection.h"
 #include "Poco/Net/StreamSocket.h"
@@ -17,7 +17,7 @@
 #include "../Requests/Behaviours/RegistrationBehavior.h"
 
 using Poco::Net::StreamSocket;
-using namespace std::tr1;
+using namespace std;
 
 
 class ServerConnection;

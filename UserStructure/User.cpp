@@ -50,3 +50,7 @@ const string& User::getUuid() const {
 void User::setUuid(const string &uuid) {
     this->uuid=uuid;
 }
+
+User::User() {
+
+}
