@@ -7,19 +7,20 @@
 
 #include "State.h"
 #include "../Behaviours/RegistrationBehavior.h"
+#include "../RequestState/Singeleton.h"
 
-class RegistrationState :public State{
+class RegistrationState :public State, public Singeleton<RegistrationState>{
 
 public:
 
     virtual void processRequest(const std::string &data, User &context) override;
 
-    //static State & getInstance() override;
 
 
 
 private:
-    RegistrationState(){};
+    friend class Singeleton; // because we are invoking private ctor from template
+    RegistrationState(){cout<<"RegistrationState created "<<endl;};
     RegistrationState(const RegistrationState& src);
     RegistrationState& operator=(const RegistrationState& rhs);
 

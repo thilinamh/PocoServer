@@ -10,10 +10,15 @@
 #include "../DBconnection.h"
 #include <odb/transaction.hxx>
 #include "User-odb.hxx"
+#include "../Requests/RequestState/InitalState.h"
+#include "../Requests/RequestState/RegistrationState.h"
+#include "../Requests/RequestState/Singeleton.h"
 
 using namespace std;
 
 User::User(const StreamSocket &socket) {
+
+    current_state=&InitalState::getInstance();
     tcpConnection = new ServerConnection(socket);
     cout << "user created" << endl;
 }
@@ -49,6 +54,8 @@ void User::setUid(string uid) {
 
 const string &User::getUuid() const {
     return this->uuid;
+
+
 }
 
 void User::setUuid(const string &uuid) {
@@ -80,6 +87,6 @@ void User::load() {
 void User::process(const string& data) {
     this->current_state->processRequest(data,*this);
 }
-void User::setCurrent_state(State &state) {
+void User::setCurrent_state(State &state)  {
     this->current_state=&state;
 }

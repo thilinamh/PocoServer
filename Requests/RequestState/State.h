@@ -12,15 +12,11 @@ class State{
 
 public:
 
-    template <typename T>
-    void load ( T& object);
     virtual void processRequest(const std::string &data, User &context) =0;
-     static State& getInstance()=0;
     virtual ~State();
 
 protected:
-    static std::unique_ptr<State> _instance;
-    State() { }
+    State();
 
 private:
     State(const State& src);

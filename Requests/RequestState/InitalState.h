@@ -6,16 +6,24 @@
 #define POCOSERVER_INITALSTATE_H
 
 #include "State.h"
-
-class InitalState: public State {
+#include "Singeleton.h"
+class InitalState: public Singeleton<InitalState>, public State {
 
 public:
     void processRequest(const std::string &data, User &context) override;
 
-    virtual State &getInstance() override;
+
 
 private:
-    InitalState(){};
+    friend class Singeleton;
+
+    InitalState() : Singeleton(), State() {
+        std::cout<<"InitialState created"<<endl;
+    }
+
+
+
+private:
     InitalState(const InitalState& src);
     InitalState& operator=(const InitalState& rhs);
 
