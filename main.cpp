@@ -14,7 +14,7 @@
 
 #include "UserStructure/User.hxx"
 #include "UserStructure/User-odb.hxx"
-
+#include "DBconnection.h"
 
 using Poco::Net::TCPServer;
 using Poco::Net::TCPServerConnectionFactory;
@@ -23,44 +23,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    using namespace std;
-    using namespace odb::core;
-    try {
-        unique_ptr<odb::database> db(new odb::mysql::database(
-                "testuser",// database login name
-                "password", // database password
-                "testdb" // database name
-        ));
-
-        // The following alternative version only creates the schema if it
-        // hasn't already been created. To detect the existence of the schema
-        // this version tries to query the database for a person object. If
-        // the corresponding table does not exist, then an exceptions will be
-        // thrown in which case we proceed to creating the schema.
-
-        {
-          transaction t (db->begin ());
-
-          try
-          {
-            db->query<User> (false);
-              cout<<"trying user"<<endl;
-              //schema_catalog::drop_schema (*db);
-          }
-          catch (const odb::exception& e)
-          {
-              cout<<"exception caugth"<<endl;
-            schema_catalog::create_schema (*db);
-          }
-
-          t.commit ();
-        }
-
-        }catch(odb::mysql::database_exception& e){
-            cerr<<e.what()<<endl;
-
-            throw e;
-        }
+    DBconnection::getDb();
 
         try{
             /*The server takes ownership of the TCPServerConnectionFactory

@@ -12,7 +12,7 @@ namespace odb
   access::object_traits< ::User >::
   id (const object_type& o)
   {
-    return o.uid;
+    return o.uid_;
   }
 
   inline
@@ -34,12 +34,19 @@ namespace odb
   }
 }
 
-#include <odb/details/unique-ptr.hxx>
-
 namespace odb
 {
   // User
   //
+
+  inline
+  void access::object_traits_impl< ::User, id_mysql >::
+  erase (database& db, const object_type& obj)
+  {
+    callback (db, obj, callback_event::pre_erase);
+    erase (db, id (obj));
+    callback (db, obj, callback_event::post_erase);
+  }
 
   inline
   void access::object_traits_impl< ::User, id_mysql >::

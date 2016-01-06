@@ -12,7 +12,16 @@ class RegistrationState :public State{
 
 public:
 
-    virtual void processRequest(char *data) override;
+    virtual void processRequest(const std::string &data, User &context) override;
+
+    //static State & getInstance() override;
+
+
+
+private:
+    RegistrationState(){};
+    RegistrationState(const RegistrationState& src);
+    RegistrationState& operator=(const RegistrationState& rhs);
 
 private:
     RegistrationBehavior* behavior; // enterprise or community

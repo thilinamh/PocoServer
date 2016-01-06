@@ -35,13 +35,18 @@ public:
     ServerConnection& getServerConnection() const;
     //virtual RegistrationBehavior* getRegBehaviour() const;
 
-    const std::string &getUid() const;
+    const string & getUid() const;
 
-    void setUid(const std::string &uid);
+    void setUid(string uid);
 
-    const std::string &getUuid() const;
+    const string &getUuid() const;
 
-    void setUuid(const std::string &uuid);
+    void setUuid(const string &uuid);
+
+    void save();
+    void load();
+    void process(const std::string& );
+    void setCurrent_state(State &state) ;
 
 protected:
     RegistrationBehavior* regBehaviour;
@@ -52,24 +57,25 @@ private:
 
     ServerConnection* tcpConnection;
 
-    std::string uid;
+    std::string uid_;
 
     std::string uuid;
 
     RequestInterface* request;
 
-    State* state;
+    State* current_state;
 
 
 
 };
-#pragma db object(User) polymorphic
-#pragma db member(User::uid) id not_null
+#pragma db object(User)
+ //polymorphic
+#pragma db member(User::uid_) id
 #pragma db member(User::uuid) not_null
 #pragma db member(User::regBehaviour) transient
 #pragma db member(User::tcpConnection) transient
 #pragma db member(User::request) transient
 #pragma db member(User::state) transient
-
+// odb --std c++11 -d mysql --generate-query --schema-format embedded  --generate-schema User.hxx
 #endif	/* USER_H */
 

@@ -3,8 +3,13 @@
 //
 
 #include "RegistrationState.h"
+#include "../../UserStructure/User.hxx"
+
+void RegistrationState::processRequest(const std::string &data, User &context) {
+
+}
 
 
-void RegistrationState::processRequest(char *data) {
-
+State &RegistrationState::getInstance() {
+    return <#initializer#>;
 }

@@ -7,25 +7,29 @@
 
 #include "User.hxx"
 #include "iostream"
+#include "../DBconnection.h"
+#include <odb/transaction.hxx>
+#include "User-odb.hxx"
+
 using namespace std;
 
-User::User(const StreamSocket& socket) {
+User::User(const StreamSocket &socket) {
     tcpConnection = new ServerConnection(socket);
-    cout<<"user created"<<endl;
+    cout << "user created" << endl;
 }
 
-User::User(const User& orig) {
+User::User(const User &orig) {
 
 }
 
 User::~User() {
-    cout<<"User deleted"<<endl;
+    cout << "User deleted" << endl;
 }
 
-ServerConnection&  User::getServerConnection() const {
+ServerConnection &User::getServerConnection() const {
 
-        return *tcpConnection;
- }
+    return *tcpConnection;
+}
 
 void User::bindWithServer() {
     // Before calling shared_from_this(),
@@ -34,23 +38,48 @@ void User::bindWithServer() {
 }
 
 
-const string& User::getUid() const {
-    return this->uid;
+const string & User::getUid() const {
+    return this->uid_;
 }
 
-void User::setUid(const string &uid) {
-    this->uid = uid;
+void User::setUid(string uid) {
+    this->uid_ = uid;
 
 }
 
-const string& User::getUuid() const {
+const string &User::getUuid() const {
     return this->uuid;
 }
 
 void User::setUuid(const string &uuid) {
-    this->uuid=uuid;
+    this->uuid = uuid;
 }
 
 User::User() {
 
+}
+
+void User::save() {
+    odb::database& db = DBconnection::getDb();
+    //delete &db;
+    odb::transaction t(db.begin());
+    db.persist(this);
+    t.commit();
+}
+
+void User::load() {
+    odb::database& db = DBconnection::getDb();
+    odb::transaction t(db.begin());
+
+    //unique_ptr<User> jane(db->load<User>(uid_));
+    db.load (uid_, *this);
+    t.commit();
+
+}
+
+void User::process(const string& data) {
+    this->current_state->processRequest(data,*this);
+}
+void User::setCurrent_state(State &state) {
+    this->current_state=&state;
 }

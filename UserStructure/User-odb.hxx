@@ -17,7 +17,6 @@
 
 #include <memory>
 #include <cstddef>
-#include <string>
 #include <utility>
 
 #include <odb/core.hxx>
@@ -27,9 +26,8 @@
 #include <odb/pointer-traits.hxx>
 #include <odb/container-traits.hxx>
 #include <odb/no-op-cache-traits.hxx>
-#include <odb/polymorphic-info.hxx>
 #include <odb/result.hxx>
-#include <odb/polymorphic-object-result.hxx>
+#include <odb/simple-object-result.hxx>
 
 #include <odb/details/unused.hxx>
 #include <odb/details/shared-ptr.hxx>
@@ -52,14 +50,7 @@ namespace odb
     typedef ::User* pointer_type;
     typedef odb::pointer_traits<pointer_type> pointer_traits;
 
-    static const bool polymorphic = true;
-
-    typedef ::User root_type;
-    typedef ::std::string discriminator_type;
-    typedef polymorphic_map<object_type> map_type;
-    typedef polymorphic_concrete_info<object_type> info_type;
-
-    static const std::size_t depth = 1UL;
+    static const bool polymorphic = false;
 
     typedef ::std::string id_type;
 
@@ -113,18 +104,6 @@ namespace odb
 
     static const uid_type_ uid;
 
-    // typeid_
-    //
-    typedef
-    mysql::query_column<
-      mysql::value_traits<
-        ::std::string,
-        mysql::id_string >::query_type,
-      mysql::id_string >
-    typeid__type_;
-
-    static const typeid__type_ typeid_;
-
     // uuid
     //
     typedef
@@ -144,11 +123,6 @@ namespace odb
   uid (A::table_name, "`uid`", 0);
 
   template <typename A>
-  const typename query_columns< ::User, id_mysql, A >::typeid__type_
-  query_columns< ::User, id_mysql, A >::
-  typeid_ (A::table_name, "`typeid`", 0);
-
-  template <typename A>
   const typename query_columns< ::User, id_mysql, A >::uuid_type_
   query_columns< ::User, id_mysql, A >::
   uuid (A::table_name, "`uuid`", 0);
@@ -164,18 +138,6 @@ namespace odb
     public access::object_traits< ::User >
   {
     public:
-    typedef polymorphic_entry<object_type, id_mysql> entry_type;
-    typedef object_traits_impl<root_type, id_mysql> root_traits;
-
-    struct discriminator_image_type
-    {
-      details::buffer discriminator_value;
-      unsigned long discriminator_size;
-      my_bool discriminator_null;
-
-      std::size_t version;
-    };
-
     struct id_image_type
     {
       details::buffer id_value;
@@ -185,22 +147,13 @@ namespace odb
       std::size_t version;
     };
 
-    static map_type* map;
-    static const info_type info;
-
     struct image_type
     {
-      // uid
+      // uid_
       //
       details::buffer uid_value;
       unsigned long uid_size;
       my_bool uid_null;
-
-      // typeid_
-      //
-      details::buffer typeid_value;
-      unsigned long typeid_size;
-      my_bool typeid_null;
 
       // uuid
       //
@@ -217,9 +170,6 @@ namespace odb
 
     static id_type
     id (const image_type&);
-
-    static discriminator_type
-    discriminator (const image_type&);
 
     static bool
     grow (image_type&,
@@ -246,20 +196,15 @@ namespace odb
     static void
     init (id_image_type&, const id_type&);
 
-    typedef
-    mysql::polymorphic_root_object_statements<object_type>
-    statements_type;
-
-    typedef statements_type root_statements_type;
+    typedef mysql::object_statements<object_type> statements_type;
 
     typedef mysql::query_base query_base_type;
 
-    static const std::size_t column_count = 3UL;
+    static const std::size_t column_count = 2UL;
     static const std::size_t id_column_count = 1UL;
     static const std::size_t inverse_column_count = 0UL;
-    static const std::size_t readonly_column_count = 1UL;
+    static const std::size_t readonly_column_count = 0UL;
     static const std::size_t managed_optimistic_column_count = 0UL;
-    static const std::size_t discriminator_column_count = 1UL;
 
     static const std::size_t separate_load_column_count = 0UL;
     static const std::size_t separate_update_column_count = 0UL;
@@ -268,7 +213,6 @@ namespace odb
 
     static const char persist_statement[];
     static const char find_statement[];
-    static const char find_discriminator_statement[];
     static const char update_statement[];
     static const char erase_statement[];
     static const char query_statement[];
@@ -277,25 +221,25 @@ namespace odb
     static const char table_name[];
 
     static void
-    persist (database&, const object_type&, bool top = true, bool dyn = true);
+    persist (database&, const object_type&);
 
     static pointer_type
     find (database&, const id_type&);
 
     static bool
-    find (database&, const id_type&, object_type&, bool dyn = true);
+    find (database&, const id_type&, object_type&);
 
     static bool
-    reload (database&, object_type&, bool dyn = true);
+    reload (database&, object_type&);
 
     static void
-    update (database&, const object_type&, bool top = true, bool dyn = true);
+    update (database&, const object_type&);
 
     static void
-    erase (database&, const id_type&, bool top = true, bool dyn = true);
+    erase (database&, const id_type&);
 
     static void
-    erase (database&, const object_type&, bool top = true, bool dyn = true);
+    erase (database&, const object_type&);
 
     static result<object_type>
     query (database&, const query_base_type&);
@@ -312,11 +256,6 @@ namespace odb
     load_ (statements_type&,
            object_type&,
            bool reload);
-
-    static void
-    discriminator_ (statements_type&,
-                    const id_type&,
-                    discriminator_type*);
   };
 
   template <>

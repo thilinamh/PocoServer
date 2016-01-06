@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DBconnection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DBconnection.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/ConferenceBehaviourEnterprise.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/ConferenceBehaviourEnterprise.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
@@ -26,6 +28,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/Singeleton.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/Singeleton.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/State.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/State.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/VerificationState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/VerificationState.h" isTestSource="false" />

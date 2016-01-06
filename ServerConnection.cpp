@@ -50,26 +50,31 @@ void ServerConnection::run() {
                                      // distructor will be called when closing the socket
     ClientRequest r;
     while (!exit) {
-        const short BUF_SIZE = 2048;
+
+        const short BUF_SIZE = 2049;
         char buf[BUF_SIZE];
-          
+        string s(BUF_SIZE,0);
        // BufferedStreamBuf b(std::streamsize(5),OSin));
        
-        int size = this->socket().receiveBytes(buf, BUF_SIZE-1);
-        
-        std::cout << "client connection "<< size<<" bytes " << endl;
-        std::stringstream duf;
-        //StringTokenizer.
-        duf<<buf;
-        std::cout << duf.str() << endl;
-        //r.decodeRequest(duf);
+        int bytesReceived = this->socket().receiveBytes(&s[0], BUF_SIZE-1);
+        s.resize(bytesReceived);
+        std::cout << "client connection "<< bytesReceived <<" bytes " << endl;
+        std::cout <<s<<endl;
+        {   /*
+            std::stringstream duf;
+            duf << buf;
+            std::cout << duf.str() << endl;
+            r.decodeRequest(duf);
+            */
+        }
+        context->process(s);
         //char* decodedC = r.decodeRequest(&buf[4]);
-        if (size==0) {
+        if (bytesReceived ==0) {
             //exit = true;
             this->socket().close();
             std::cout << "No data" << endl;
         }
-        
+
         //int val=this->socket().sendBytes(reinterpret_cast<void*> (buf), BUF_SIZE-1);
         //if (val<0)
     }

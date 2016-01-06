@@ -25,7 +25,9 @@ public:
     ClientConnectionFactory(const ClientConnectionFactory& orig);
     virtual ~ClientConnectionFactory();
     TCPServerConnection* createConnection(const StreamSocket& socket);
+
 private:
+
 
 };
 

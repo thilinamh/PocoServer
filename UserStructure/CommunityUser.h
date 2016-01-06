@@ -18,5 +18,7 @@ private:
     VerificationBehaviourCommunity* verfBehaviour;
 };
 
+#pragma db object(CommunityUser) pointer(std::shared_ptr)
+#pragma db member(CommunityUser::verfBehaviour) transient
 
 #endif //POCOSERVER_COMMUNITYUSER_H

@@ -10,7 +10,15 @@
 class InitalState: public State {
 
 public:
-    void processRequest(char *data) override;
+    void processRequest(const std::string &data, User &context) override;
+
+    virtual State &getInstance() override;
+
+private:
+    InitalState(){};
+    InitalState(const InitalState& src);
+    InitalState& operator=(const InitalState& rhs);
+
 };
 
 
