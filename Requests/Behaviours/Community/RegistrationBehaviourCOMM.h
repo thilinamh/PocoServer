@@ -5,9 +5,10 @@
 #ifndef POCOSERVER_REGISTRATIONBEHAVIOURCOMMUNITY_H
 #define POCOSERVER_REGISTRATIONBEHAVIOURCOMMUNITY_H
 
-#include "RegistrationBehavior.h"
+#include "../RegistrationBehavior.h"
+#include "../../../Helper/Singleton.h"
 
-class RegistrationBehaviourCommunity :public  RegistrationBehavior{
+class RegistrationBehaviourCOMM :public Singleton<RegistrationBehaviourCOMM>,public  RegistrationBehavior{
 
 };
 

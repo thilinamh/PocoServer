@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 project(PocoServer)
 
+add_definitions(-DCOMM)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
@@ -18,7 +20,7 @@ set(SOURCE_FILES
         Requests/RequestState/RegistrationState.cpp Requests/RequestState/RegistrationState.h
         Requests/RequestState/VerificationState.cpp Requests/RequestState/VerificationState.h
         Requests/RequestState/InitalState.cpp Requests/RequestState/InitalState.h
-        Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RegistrationBehaviourEnterprise.cpp Requests/Behaviours/RegistrationBehaviourEnterprise.h Requests/Behaviours/RegistrationBehaviourCommunity.cpp Requests/Behaviours/RegistrationBehaviourCommunity.h UserStructure/EnterpriseUser.cpp UserStructure/EnterpriseUser.h UserStructure/CommunityUser.cpp UserStructure/CommunityUser.h Requests/Behaviours/ConferenceBehaviourEnterprise.cpp Requests/Behaviours/ConferenceBehaviourEnterprise.h Requests/Behaviours/VerificationBehaviourCommunity.cpp Requests/Behaviours/VerificationBehaviourCommunity.h DBconnection.cpp DBconnection.h Requests/RequestState/State.cpp Requests/RequestState/Singeleton.cpp Requests/RequestState/Singeleton.h)
+        Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/RequestBehaviour.cpp Requests/Behaviours/RequestBehaviour.h Requests/Behaviours/Enterprise/RegistrationBehaviourENT.cpp Requests/Behaviours/Enterprise/RegistrationBehaviourENT.h Requests/Behaviours/Community/RegistrationBehaviourCOMM.cpp Requests/Behaviours/Community/RegistrationBehaviourCOMM.h UserStructure/EnterpriseUser.cpp UserStructure/EnterpriseUser.h UserStructure/CommunityUser.cpp UserStructure/CommunityUser.h Requests/Behaviours/Enterprise/ConferenceBehaviourENT.cpp Requests/Behaviours/Enterprise/ConferenceBehaviourENT.h Requests/Behaviours/Community/VerificationBehaviourCOMM.cpp Requests/Behaviours/Community/VerificationBehaviourCOMM.h DBconnection.cpp DBconnection.h Requests/RequestState/State.cpp Helper/Singleton.cpp Helper/Singleton.h Requests/Behaviours/BehaviourContainer.cpp Requests/Behaviours/BehaviourContainer.h Requests/Behaviours/Enterprise/BehaviourContainerENT.cpp Requests/Behaviours/Enterprise/BehaviourContainerENT.h Requests/Behaviours/Community/BehaviourContainerCOMM.cpp Requests/Behaviours/Community/BehaviourContainerCOMM.h)
 add_executable(PocoServer ${SOURCE_FILES})
 
 #INCLUDE_DIRECTORIES(/usr/local/include/odb)
@@ -28,6 +30,9 @@ add_executable(PocoServer ${SOURCE_FILES})
 #set(POCO_ROOT "/usr/local/include/")
 #set(Poco_INCLUDE_DIR "/usr/local/include/Poco")
 #set(Poco_LIBRARY_DIR "/usr/local/lib")
+
+#SET(BASEPATH "${CMAKE_SOURCE_DIR}")
+#INCLUDE_DIRECTORIES("${BASEPATH}")
 
 
 #include_directories(${POCO_ROOT})

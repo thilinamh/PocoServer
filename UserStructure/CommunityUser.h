@@ -7,7 +7,7 @@
 
 #include "User.hxx"
 #include "../Requests/Behaviours/RegistrationBehavior.h"
-#include "../Requests/Behaviours/VerificationBehaviourCommunity.h"
+
 
 class CommunityUser: public User {
 
@@ -15,7 +15,7 @@ public:
     CommunityUser(const StreamSocket &socket) : User(socket) { }
 
 private:
-    VerificationBehaviourCommunity* verfBehaviour;
+
 };
 
 #pragma db object(CommunityUser) pointer(std::shared_ptr)

@@ -5,9 +5,10 @@
 #ifndef POCOSERVER_REGISTRATIONBEHAVIOURENTERPRISE_H
 #define POCOSERVER_REGISTRATIONBEHAVIOURENTERPRISE_H
 
-#include "RegistrationBehavior.h"
+#include "../RegistrationBehavior.h"
+#include "../../../Helper/Singleton.h"
 
-class RegistrationBehaviourEnterprise : public RegistrationBehavior {
+class RegistrationBehaviourENT :public Singleton<RegistrationBehaviourENT>, public RegistrationBehavior {
 
 };
 

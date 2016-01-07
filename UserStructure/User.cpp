@@ -12,7 +12,6 @@
 #include "User-odb.hxx"
 #include "../Requests/RequestState/InitalState.h"
 #include "../Requests/RequestState/RegistrationState.h"
-#include "../Requests/RequestState/Singeleton.h"
 
 using namespace std;
 
@@ -89,4 +88,8 @@ void User::process(const string& data) {
 }
 void User::setCurrent_state(State &state)  {
     this->current_state=&state;
+}
+
+RegistrationBehavior &User::getRegBehaviour() const {
+    return *regBehaviour;
 }

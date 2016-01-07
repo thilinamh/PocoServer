@@ -5,13 +5,13 @@
 #ifndef POCOSERVER_REGRQUEST_H
 #define POCOSERVER_REGRQUEST_H
 
-#include "../RequestInterface.h"
+#include <iostream>
+using namespace std;
 
-class RegistrationBehavior : public RequestInterface {
+class RegistrationBehavior {
 
 public:
-    bool processReques() override;
-    bool registerUser();
+    virtual bool registerUser(const string& uid, const string uuid) = 0;
 };
 
 

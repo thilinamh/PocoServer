@@ -10,7 +10,7 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
     if (data[0]=='i'){
         context.setCurrent_state(InitalState::getInstance());
     }
+    RegistrationBehavior& a  = context.getRegBehaviour();
+
 }
-
-
 

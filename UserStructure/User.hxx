@@ -15,6 +15,7 @@
 #include "../Requests/RequestInterface.h"
 #include "../Requests/RequestState/State.h"
 #include "../Requests/Behaviours/RegistrationBehavior.h"
+#include "../Requests/Behaviours/BehaviourContainer.h"
 
 using Poco::Net::StreamSocket;
 using namespace std;
@@ -33,7 +34,7 @@ public:
      * */
     void bindWithServer();
     ServerConnection& getServerConnection() const;
-    //virtual RegistrationBehavior* getRegBehaviour() const;
+     RegistrationBehavior& getRegBehaviour() const;
 
     const string & getUid() const;
 
@@ -49,6 +50,7 @@ public:
     void setCurrent_state(State &state) ;
 
 protected:
+    BehaviourContainer* behaviours;
     RegistrationBehavior* regBehaviour;
 
 private:
@@ -67,9 +69,9 @@ private:
 
 
 
+
 };
-#pragma db object(User)
- //polymorphic
+#pragma db object(User) polymorphic
 #pragma db member(User::uid_) id
 #pragma db member(User::uuid) not_null
 #pragma db member(User::regBehaviour) transient

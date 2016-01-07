@@ -4,9 +4,7 @@
 
 #include "RegistrationBehavior.h"
 
-bool RegistrationBehavior::processReques() {
-    return false;
-}
+
 
 bool RegistrationBehavior::registerUser() {
     return false;

@@ -6,7 +6,9 @@
 #define POCOSERVER_CONFERENCEBEHAVIOURENTERPRISE_H
 
 
-class ConferenceBehaviourEnterprise {
+#include "../../../Helper/Singleton.h"
+
+class ConferenceBehaviourENT:public Singleton<ConferenceBehaviourENT> {
 
 };
 

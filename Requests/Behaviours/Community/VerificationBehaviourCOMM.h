@@ -6,7 +6,9 @@
 #define POCOSERVER_VERIFICATIONBEHAVIOURCOMMUNITY_H
 
 
-class VerificationBehaviourCommunity {
+#include "../../../Helper/Singleton.h"
+
+class VerificationBehaviourCOMM :public Singleton<VerificationBehaviourCOMM> {
 
 };
 

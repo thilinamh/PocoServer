@@ -6,22 +6,20 @@
 #define POCOSERVER_INITALSTATE_H
 
 #include "State.h"
-#include "Singeleton.h"
-class InitalState: public Singeleton<InitalState>, public State {
+#include "../../Helper/Singleton.h"
+//#include "/Helper/Singleton.h"
+
+class InitalState: public Singleton<InitalState>, public State {
 
 public:
     void processRequest(const std::string &data, User &context) override;
 
-
-
 private:
-    friend class Singeleton;
+    friend class Singleton;
 
-    InitalState() : Singeleton(), State() {
-        std::cout<<"InitialState created"<<endl;
+    InitalState() : Singleton(), State() {
+        std::cout<<"InitialState created"<<std::endl;
     }
-
-
 
 private:
     InitalState(const InitalState& src);

@@ -7,7 +7,7 @@
 
 #include "User.hxx"
 #include "../Requests/Behaviours/RegistrationBehavior.h"
-#include "../Requests/Behaviours/ConferenceBehaviourEnterprise.h"
+
 
 class EnterpriseUser : public User{
 
@@ -15,7 +15,7 @@ public:
     EnterpriseUser(const StreamSocket &socket) : User(socket) { }
 
 private:
-    ConferenceBehaviourEnterprise* confBehaviour;
+
 };
 
 
