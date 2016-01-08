@@ -10,6 +10,8 @@
 
 class VerificationBehaviourCOMM :public Singleton<VerificationBehaviourCOMM> {
 
+private:friend class Singleton;
+    VerificationBehaviourCOMM() : Singleton() { cout<<"VerifBehaviourCOMM obj created"<<endl;}
 };
 
 

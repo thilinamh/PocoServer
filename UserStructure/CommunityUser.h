@@ -12,13 +12,17 @@
 class CommunityUser: public User {
 
 public:
-    CommunityUser(const StreamSocket &socket) : User(socket) { }
+    CommunityUser(const StreamSocket &socket) ;
+
+    virtual void bindWithServer() override;
+
+    virtual BehaviourContainer &getBehaviours() override;
 
 private:
 
 };
 
 #pragma db object(CommunityUser) pointer(std::shared_ptr)
-#pragma db member(CommunityUser::verfBehaviour) transient
+//#pragma db member(CommunityUser::verfBehaviour) transient
 
 #endif //POCOSERVER_COMMUNITYUSER_H

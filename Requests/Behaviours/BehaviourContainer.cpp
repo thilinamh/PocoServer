@@ -3,6 +3,10 @@
 //
 
 #include "BehaviourContainer.h"
-RegistrationBehavior& BehaviourContainer:: getRegistrationBehaviour() const {
-    return *regBehaviour;
+#include "Community/RegistrationBehaviourCOMM.h"
+/*
+RegistrationBehavior& BehaviourContainer:: getRegistrationBehaviour()  {
+    cout<<"func called"<<endl;
+    return RegistrationBehaviourCOMM::getInstance();
 }
+ */

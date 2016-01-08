@@ -6,11 +6,19 @@
 #include "../../UserStructure/User.hxx"
 #include "../RequestState/InitalState.h"
 void RegistrationState::processRequest(const std::string &data, User &context) {
-    std::cout<<"in Registration"<<data<<std::endl;
+    std::cout<<"in Registration "<<data<<std::endl;
     if (data[0]=='i'){
         context.setCurrent_state(InitalState::getInstance());
     }
-    RegistrationBehavior& a  = context.getRegBehaviour();
+    try {
+        BehaviourContainer* a= &context.getBehaviours();
+        if(a== nullptr){
+            cout<<"null"<<endl;
+        }
+        a->getRegistrationBehaviour().registerUser("1234",data.substr(3));
+    }catch (...){
+        cout<<"error"<<endl;
+    }
 
 }
 

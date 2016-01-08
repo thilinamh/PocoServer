@@ -29,12 +29,12 @@ public:
     User(const StreamSocket& socket);
     User(const User& orig);
     virtual ~User(); // essential for polymorphic behaviour
-    /**
+    virtual /**
      * tcpConnection will be given the current User object
      * */
     void bindWithServer();
     ServerConnection& getServerConnection() const;
-     RegistrationBehavior& getRegBehaviour() const;
+
 
     const string & getUid() const;
 
@@ -48,24 +48,23 @@ public:
     void load();
     void process(const std::string& );
     void setCurrent_state(State &state) ;
+    virtual BehaviourContainer & getBehaviours();
 
 protected:
-    BehaviourContainer* behaviours;
-    RegistrationBehavior* regBehaviour;
+    unique_ptr<BehaviourContainer> _behaviours;
+    ServerConnection* tcpConnection; //do not own the object
+    User();
 
 private:
     friend  class odb::access;
-    User();
 
-    ServerConnection* tcpConnection;
+
 
     std::string uid_;
 
     std::string uuid;
 
-    RequestInterface* request;
-
-    State* current_state;
+    State* current_state; //do not own the object
 
 
 

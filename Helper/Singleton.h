@@ -15,6 +15,9 @@ public:
 
 protected:
     Singleton() { }
+    //Derived objects should never be deleted by pointers of this type
+    ~Singleton() {cout<<"Singleton Destructor"<<endl; }
+
 private:
     
     Singleton(const Singleton & src);
@@ -24,6 +27,9 @@ private:
 };
 template <typename T>
 unique_ptr<T> Singleton<T>::_instance;
+/*we have to use Singleton<T>:: definition instead of Singleton:: when defining outside of the header
+    even for ctor dtor
+ */
 
 template <typename T>
 T& Singleton<T>::getInstance(){

@@ -12,6 +12,9 @@
 
 class BehaviourContainerCOMM:public BehaviourContainer {
 
+public:
+    virtual RegistrationBehavior &getRegistrationBehaviour()  override;
+
 private:
     RegistrationBehaviourCOMM* regBehaviour;
     VerificationBehaviourCOMM* verfyBehaviour;

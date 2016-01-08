@@ -10,6 +10,10 @@
 
 class RegistrationBehaviourENT :public Singleton<RegistrationBehaviourENT>, public RegistrationBehavior {
 
+public:
+    virtual bool registerUser(const string &uid, const string &uuid, const string &additional) override ;
+
+    //virtual bool registerUser(const string &uid, const string &uuid) override;
 };
 
 

@@ -13,10 +13,12 @@ class State{
 public:
 
     virtual void processRequest(const std::string &data, User &context) =0;
-    virtual ~State();
+
 
 protected:
     State();
+    //Derived objects should never be deleted by pointers of this type since they are singletons
+    ~State();
 
 private:
     State(const State& src);

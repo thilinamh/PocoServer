@@ -11,7 +11,7 @@
 class BehaviourContainer {
 
 public:
-    RegistrationBehavior& getRegistrationBehaviour() const ;
+    virtual RegistrationBehavior& getRegistrationBehaviour() =0;
 
 protected:
     RegistrationBehavior* regBehaviour;

@@ -12,6 +12,7 @@
 #include "User-odb.hxx"
 #include "../Requests/RequestState/InitalState.h"
 #include "../Requests/RequestState/RegistrationState.h"
+#include "../Requests/Behaviours/Community/BehaviourContainerCOMM.h"
 
 using namespace std;
 
@@ -90,6 +91,8 @@ void User::setCurrent_state(State &state)  {
     this->current_state=&state;
 }
 
-RegistrationBehavior &User::getRegBehaviour() const {
-    return *regBehaviour;
+BehaviourContainer &User::getBehaviours() {
+    cout<<"In user get behaviour"<<endl;
+    _behaviours.reset(new BehaviourContainerCOMM());
+    return *_behaviours;
 }

@@ -7,6 +7,7 @@
 #include <tr1/memory>
 #include "TCPClientConnectionFactory.h"
 #include "UserStructure/User.hxx"
+#include "UserStructure/CommunityUser.h"
 
 //#include "ServerConnection.h"
 ClientConnectionFactory::ClientConnectionFactory() {
@@ -19,7 +20,7 @@ ClientConnectionFactory::~ClientConnectionFactory() {
 }
 
 TCPServerConnection*  ClientConnectionFactory::createConnection(const StreamSocket& socket){
-   shared_ptr<User> usr (new User(socket));
+   shared_ptr<CommunityUser> usr (new CommunityUser(socket));
    usr->bindWithServer();
 
 
