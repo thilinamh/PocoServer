@@ -45,7 +45,8 @@ public:
     void setUuid(const string &uuid);
 
     virtual bool save();
-    virtual bool load();
+    virtual bool load_by_uid();
+    virtual bool load_by_uuid(const string &uuid);
     void process(const std::string& );
     void setCurrent_state(State &state) ;
     virtual BehaviourContainer & getBehaviours();

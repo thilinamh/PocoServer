@@ -25,8 +25,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/RegistrationBehaviourENT.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RequestBehaviour.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.cpp" isTestSource="false" />

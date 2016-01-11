@@ -11,8 +11,8 @@
 #include <odb/transaction.hxx>
 #include "User-odb.hxx"
 #include "../Requests/RequestState/InitalState.h"
-#include "../Requests/RequestState/RegistrationState.h"
 #include "../Requests/Behaviours/Community/BehaviourContainerCOMM.h"
+#include <odb/query.hxx>
 
 using namespace std;
 
@@ -80,7 +80,7 @@ bool User::save() {
 
 }
 
-bool User::load() {
+bool User::load_by_uid() {
     odb::database& db = DBconnection::getDb();
     odb::transaction t(db.begin());
 
@@ -98,6 +98,20 @@ bool User::load() {
 
 }
 
+bool User::load_by_uuid(const string &uuid) {
+    odb::database& db = DBconnection::getDb();
+    odb::transaction t(db.begin());
+
+    typedef odb::query<User> query;
+    typedef odb::result<User> result;
+
+    //query q (query::uuid == query::_ref (this->uuid));
+    bool a=db.query_one<User> (query::uuid==query::_ref(uuid), *this);
+
+    return a;
+
+}
+
 void User::process(const string& data) {
     this->current_state->processRequest(data,*this);
 }
@@ -110,3 +124,5 @@ BehaviourContainer &User::getBehaviours() {
     _behaviours.reset(new BehaviourContainerCOMM());
     return *_behaviours;
 }
+
+

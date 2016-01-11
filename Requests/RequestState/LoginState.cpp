@@ -9,7 +9,7 @@ void LoginState::processRequest(const std::string &data, User &context) {
 string uid =data.substr(0,4);
     cout<<"loading uid : "<<uid<<endl;
     context.setUid(uid);
-    context.load();
+    context.load_by_uid();
     context.setCurrent_state(InitalState::getInstance());
 
 }
