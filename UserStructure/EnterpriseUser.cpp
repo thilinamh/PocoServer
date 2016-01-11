@@ -3,3 +3,8 @@
 //
 
 #include "EnterpriseUser.h"
+#include "../Requests/Behaviours/Enterprise/BehaviourContainerENT.h"
+
+EnterpriseUser::EnterpriseUser(const StreamSocket &socket):User(socket, new BehaviourContainerENT()) {
+
+}

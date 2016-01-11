@@ -58,7 +58,7 @@ void ServerConnection::run() {
        
         int bytesReceived = this->socket().receiveBytes(&s[0], BUF_SIZE-1);
         s.resize(bytesReceived);
-        std::cout << "client connection "<< bytesReceived <<" bytes " << endl;
+        std::cout << bytesReceived <<" bytes " << "received :" ;
         std::cout <<s<<endl;
         {   /*
             std::stringstream duf;

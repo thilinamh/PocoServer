@@ -34,6 +34,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestInterface.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/InitalState.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/LoginState.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/LoginState.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/RegistrationState.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/RequestState/State.cpp" isTestSource="false" />

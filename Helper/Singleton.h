@@ -37,5 +37,6 @@ T& Singleton<T>::getInstance(){
         _instance.reset(new T());
     }
     return *_instance;
+    //return _instance.get() ? *_instance : (_instance.reset( new T()));
 }
 #endif //POCOSERVER_SINGELETON_H

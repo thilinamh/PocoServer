@@ -46,7 +46,9 @@ namespace odb
   class access::object_traits< ::User >
   {
     public:
-    typedef ::User object_type;
+      object_traits() {}
+
+      typedef ::User object_type;
     typedef ::User* pointer_type;
     typedef odb::pointer_traits<pointer_type> pointer_traits;
 
@@ -131,6 +133,7 @@ namespace odb
   struct pointer_query_columns< ::User, id_mysql, A >:
     query_columns< ::User, id_mysql, A >
   {
+      pointer_query_columns() {}
   };
 
   template <>
@@ -138,7 +141,9 @@ namespace odb
     public access::object_traits< ::User >
   {
     public:
-    struct id_image_type
+      object_traits_impl() {}
+
+      struct id_image_type
     {
       details::buffer id_value;
       unsigned long id_size;
@@ -262,6 +267,7 @@ namespace odb
   class access::object_traits_impl< ::User, id_common >:
     public access::object_traits_impl< ::User, id_mysql >
   {
+      object_traits_impl() {}
   };
 
   // User

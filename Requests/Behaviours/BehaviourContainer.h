@@ -15,6 +15,7 @@ public:
 
 protected:
     RegistrationBehavior* regBehaviour;
+
 };
 
 

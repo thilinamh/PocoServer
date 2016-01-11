@@ -12,6 +12,9 @@
 
 class BehaviourContainerENT:public BehaviourContainer {
 
+public:
+    virtual RegistrationBehavior &getRegistrationBehaviour() override;
+
 private:
     RegistrationBehaviourENT* regBehaviour;
     ConferenceBehaviourENT* confBeheviour;

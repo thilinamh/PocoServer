@@ -12,7 +12,7 @@
 class EnterpriseUser : public User{
 
 public:
-    EnterpriseUser(const StreamSocket &socket) : User(socket) { }
+    EnterpriseUser(const StreamSocket &socket) ;
 
 private:
 

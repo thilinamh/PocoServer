@@ -26,26 +26,26 @@ class ServerConnection;
 
 class User: public enable_shared_from_this<User> {
 public:
-    User(const StreamSocket& socket);
+    User(const StreamSocket &socket, BehaviourContainer *behaviourContainer);
     User(const User& orig);
     virtual ~User(); // essential for polymorphic behaviour
-    virtual /**
+    /**
      * tcpConnection will be given the current User object
      * */
-    void bindWithServer();
-    ServerConnection& getServerConnection() const;
+    virtual void bindWithServer();
 
+    ServerConnection& getServerConnection() const;
 
     const string & getUid() const;
 
-    void setUid(string uid);
+    void setUid(const string &uid);
 
     const string &getUuid() const;
 
     void setUuid(const string &uuid);
 
-    void save();
-    void load();
+    virtual bool save();
+    virtual bool load();
     void process(const std::string& );
     void setCurrent_state(State &state) ;
     virtual BehaviourContainer & getBehaviours();
@@ -53,21 +53,16 @@ public:
 protected:
     unique_ptr<BehaviourContainer> _behaviours;
     ServerConnection* tcpConnection; //do not own the object
-    User();
+    User(); //reserved for odb
 
 private:
     friend  class odb::access;
-
-
 
     std::string uid_;
 
     std::string uuid;
 
     State* current_state; //do not own the object
-
-
-
 
 };
 #pragma db object(User) polymorphic

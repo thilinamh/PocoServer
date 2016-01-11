@@ -5,6 +5,8 @@
 #include "RegistrationBehaviourCOMM.h"
 
 bool RegistrationBehaviourCOMM::registerUser(const string &uid, const string &uuid, const string &additional) {
-    cout<<"COMM reg"<<endl;
+    cout<<"uid"<<uid<<endl;
+    cout<<"uuid"<<uuid<<endl;
+
     return false;
 }

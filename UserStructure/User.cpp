@@ -16,14 +16,18 @@
 
 using namespace std;
 
-User::User(const StreamSocket &socket) {
+User::User(const StreamSocket &socket, BehaviourContainer *behaviourContainer): _behaviours(behaviourContainer) {
 
     current_state=&InitalState::getInstance();
     tcpConnection = new ServerConnection(socket);
     cout << "user created" << endl;
 }
 
-User::User(const User &orig) {
+User::User(const User &orig)  {
+
+}
+
+User::User()  {
 
 }
 
@@ -47,40 +51,50 @@ const string & User::getUid() const {
     return this->uid_;
 }
 
-void User::setUid(string uid) {
+void User::setUid(const string &uid) {
     this->uid_ = uid;
 
 }
 
 const string &User::getUuid() const {
     return this->uuid;
-
-
 }
 
 void User::setUuid(const string &uuid) {
     this->uuid = uuid;
 }
 
-User::User() {
-
-}
-
-void User::save() {
+bool User::save() {
     odb::database& db = DBconnection::getDb();
     //delete &db;
     odb::transaction t(db.begin());
-    db.persist(this);
-    t.commit();
+    try {
+        db.persist(*this);
+        t.commit();
+        cout<<"user saved"<<endl;
+    }catch (const odb::object_already_persistent& e){
+        cout<<"user already exist"<<endl;
+        return false;
+    }
+    return true;
+
 }
 
-void User::load() {
+bool User::load() {
     odb::database& db = DBconnection::getDb();
     odb::transaction t(db.begin());
 
     //unique_ptr<User> jane(db->load<User>(uid_));
-    db.load (uid_, *this);
-    t.commit();
+    try{
+        db.load (uid_, *this);
+        t.commit();
+        cout<<"user loaded sucessfully "<<" uuid : "<<this->uuid<<endl;
+    }catch(const odb::object_not_persistent& e){
+        cout<<"user does not exist"<<endl;
+        t.rollback();
+        return false;
+    }
+    return true;
 
 }
 

@@ -3,3 +3,10 @@
 //
 
 #include "BehaviourContainerENT.h"
+
+RegistrationBehavior &BehaviourContainerENT::getRegistrationBehaviour() {
+ if(regBehaviour== nullptr){
+  regBehaviour=&RegistrationBehaviourENT::getInstance();
+ }
+ return *regBehaviour;
+}

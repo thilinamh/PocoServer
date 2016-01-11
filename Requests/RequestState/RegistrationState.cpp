@@ -16,8 +16,12 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
             cout<<"null"<<endl;
         }
         a->getRegistrationBehaviour().registerUser("1234",data.substr(3));
+
+        context.setUid("1234");
+        context.setUuid(data.substr(3));
+        context.save();
     }catch (...){
-        cout<<"error"<<endl;
+        cout<<"error saving"<<endl;
     }
 
 }

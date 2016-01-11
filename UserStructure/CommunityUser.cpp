@@ -5,7 +5,7 @@
 #include "CommunityUser.h"
 #include "../Requests/Behaviours/Community/BehaviourContainerCOMM.h"
 
-CommunityUser::CommunityUser(const StreamSocket &socket):User(socket) {
+CommunityUser::CommunityUser(const StreamSocket &socket): User(socket, new BehaviourContainerCOMM()) {
 cout<<"CommiunityUser Created"<<endl;
 }
 
@@ -16,11 +16,7 @@ void CommunityUser::bindWithServer() {
 }
 
 BehaviourContainer &CommunityUser::getBehaviours() {
-  cout<<"In CommunityUser get behaviour"<<endl;
-    if(User::_behaviours.get()==nullptr){
-      cout<<"BehaviourContainerCOMM created"<<endl;
-      User::_behaviours.reset(new BehaviourContainerCOMM());
-    }
+
     return *(User::_behaviours);
 
 }

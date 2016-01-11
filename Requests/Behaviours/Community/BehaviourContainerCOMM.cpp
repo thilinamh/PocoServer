@@ -10,3 +10,7 @@ RegistrationBehavior &BehaviourContainerCOMM::getRegistrationBehaviour()  {
     }
     return *regBehaviour;
 }
+
+void BehaviourContainerCOMM::pass() {
+
+}
