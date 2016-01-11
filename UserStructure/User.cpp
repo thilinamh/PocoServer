@@ -107,7 +107,7 @@ bool User::load_by_uuid(const string &uuid) {
 
     //query q (query::uuid == query::_ref (this->uuid));
     bool a=db.query_one<User> (query::uuid==query::_ref(uuid), *this);
-
+    t.commit();
     return a;
 
 }

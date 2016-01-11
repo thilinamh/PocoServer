@@ -9,16 +9,19 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
     std::cout<<"in Registration "<<data<<std::endl;
     if (data[0]=='i'){
         context.setCurrent_state(InitalState::getInstance());
+        return;
     }
     try {
         BehaviourContainer* a= &context.getBehaviours();
         if(a== nullptr){
             cout<<"null"<<endl;
         }
-        a->getRegistrationBehaviour().registerUser("1234",data.substr(3));
+        string uid=data.substr(0,4);
+        string uuid=data.substr(5,8);
+        a->getRegistrationBehaviour().registerUser(uid,uuid);
 
-        context.setUid("1234");
-        context.setUuid(data.substr(3));
+        context.setUid(uid);
+        context.setUuid(uuid);
         context.save();
     }catch (...){
         cout<<"error saving"<<endl;

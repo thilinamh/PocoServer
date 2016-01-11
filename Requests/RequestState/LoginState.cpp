@@ -6,10 +6,20 @@
 #include "InitalState.h"
 #include "../../UserStructure/User.hxx"
 void LoginState::processRequest(const std::string &data, User &context) {
-string uid =data.substr(0,4);
+    if(data[0]=='i'){
+        context.setCurrent_state(InitalState::getInstance());
+        return;
+    }
+    string uid =data.substr(0,4);
     cout<<"loading uid : "<<uid<<endl;
     context.setUid(uid);
-    context.load_by_uid();
-    context.setCurrent_state(InitalState::getInstance());
+    bool found=context.load_by_uid();
+    string uuid= data.substr(5,8);
+    if(!found){
+
+        bool loaded=context.load_by_uuid(uuid);
+        cout<<"loaded by uuid : "<<loaded<<" uid->"<<context.getUid()<<endl;
+    }
+
 
 }
