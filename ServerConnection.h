@@ -11,7 +11,7 @@
 #include <Poco/Net/StreamSocket.h>
 #include <memory>
 #include "Poco/StringTokenizer.h"
-
+#include <iostream>
 //#include "User.h"
 class User;
 using Poco::StringTokenizer;
@@ -32,7 +32,7 @@ public:
     ~ServerConnection();
     
     
-    void run();
+    void run() override;
     /**
      * 
      * @param idle_time_from_last_packet 
@@ -46,10 +46,11 @@ public:
             (TCP_KEEPINTVL socket option)
      * 
      */
-    void setConnectionCheckParams(int idle_time_from_last_packet, int ack_packets, int ack_interval);
+    void setHeartbeatParams(int idle_time_from_last_packet, int ack_packets, int ack_interval);
    
     void setContext (std::shared_ptr<User> context);
-    
+
+    int writeToSocket(const std::string& message);
 
 
 private:

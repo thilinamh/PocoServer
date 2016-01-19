@@ -6,7 +6,7 @@
 
 
 
-bool RegistrationBehavior::registerUser(const string &uid, const string &uuid, const string &additional) {
+bool RegistrationBehavior::registerUser(const string &uid, const string &uuid, const string &extra) {
     cout<<"abstract rgistration"<<endl;
     return false;
 }

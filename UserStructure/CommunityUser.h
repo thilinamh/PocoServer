@@ -16,7 +16,6 @@ public:
 
     virtual void bindWithServer() override;
 
-    virtual BehaviourContainer &getBehaviours() override;
 
 private:
 

@@ -118,11 +118,22 @@ void User::process(const string& data) {
 void User::setCurrent_state(State &state)  {
     this->current_state=&state;
 }
-
+/*
 BehaviourContainer &User::getBehaviours() {
     cout<<"In user get behaviour"<<endl;
     _behaviours.reset(new BehaviourContainerCOMM());
     return *_behaviours;
 }
+*/
 
+bool User::registerUser(const string &decrpted_data) {
+   return this->_behaviours->getRegistrationBehaviour().registerUser(uid_, uuid, decrpted_data);
+}
 
+bool User::verifyRegistration() {
+    return false;
+}
+
+int User::writeToClient(const string &command) {
+    this->tcpConnection->writeToSocket(command);
+}

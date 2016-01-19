@@ -7,8 +7,18 @@
       <sourceFolder url="file://$MODULE_DIR$/ClientRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DBconnection.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DBconnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/Crypto.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/Crypto.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPAuthRequest.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPAuthRequest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPBase.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPBase.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPGenerationRequest.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/OTP/OTPGenerationRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Helper/Singleton.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Helper/Singleton.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/StringHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helper/StringHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/BehaviourContainer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/BehaviourContainer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/BehaviourContainerCOMM.cpp" isTestSource="false" />
@@ -25,6 +35,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/RegistrationBehaviourENT.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/VerificationBehaviour.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/VerificationBehaviour.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/CommunityRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/EnterpriseRequest.cpp" isTestSource="false" />

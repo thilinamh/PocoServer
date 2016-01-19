@@ -14,6 +14,7 @@
 #include <openssl/pem.h>
 #include <string.h>
 
+
 using namespace std;
 
 ClientRequest::ClientRequest() {
@@ -41,7 +42,7 @@ void ClientRequest::decodeRequest(std::stringstream& str){
                 cout<<s<<endl;
 }
 
-char* ClientRequest::decodeRequest(char *b64edata) {
+unique_ptr<string>  ClientRequest::decryptRequest(char *b64edata) {
 	int dLen = 0x00;
 	char *buff, raw[4096], *ret = NULL;
 	BIO *priv_key_bio = NULL;
@@ -59,6 +60,7 @@ char* ClientRequest::decodeRequest(char *b64edata) {
 
 	if (priv_key_bio == NULL) {
 		cerr << "RSA Key BIO creation failed.." << endl;
+		throw std::bad_exception();
 	} else {
 
 		if ((pk = PEM_read_bio_RSAPrivateKey(priv_key_bio, &pk, NULL, NULL)) //read the private key
@@ -79,12 +81,16 @@ char* ClientRequest::decodeRequest(char *b64edata) {
 
 				free(buff);
 				RSA_free(pk);
+				unique_ptr<string> decrptedString(new string(raw));
 
-				ret = new char[strlen(raw) + 1];
-				strcpy(ret, raw);
+				return decrptedString; // moves the ownership
+				//ret = new char[strlen(raw) + 1];
+				//strcpy(ret, raw);
+			}else{
+				throw std::invalid_argument("cannot decrypt data");
 			}
 		}
 	}
 
-	return ret;
+
 }

@@ -43,14 +43,17 @@ public:
     const string &getUuid() const;
 
     void setUuid(const string &uuid);
+    bool registerUser(const string &decrpted_data);
+    bool verifyRegistration();
+    bool login();
 
     virtual bool save();
     virtual bool load_by_uid();
     virtual bool load_by_uuid(const string &uuid);
     void process(const std::string& );
     void setCurrent_state(State &state) ;
-    virtual BehaviourContainer & getBehaviours();
-
+    //virtual BehaviourContainer & getBehaviours();
+    int writeToClient(const string &command);
 protected:
     unique_ptr<BehaviourContainer> _behaviours;
     ServerConnection* tcpConnection; //do not own the object

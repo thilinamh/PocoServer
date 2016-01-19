@@ -11,7 +11,7 @@ using namespace std;
 class RegistrationBehavior {
 
 public:
-    virtual bool registerUser(const string &uid, const string &uuid, const string &additional="") = 0;
+    virtual bool registerUser(const string &uid, const string &uuid, const string &extra) = 0;
 };
 
 

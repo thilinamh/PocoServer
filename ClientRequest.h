@@ -14,6 +14,8 @@
 
 
 #include <sstream>
+#include <memory>
+using namespace std;
 
 using Poco::Base64Encoder;
 using Poco::Base64Decoder;
@@ -24,7 +26,7 @@ public:
     ClientRequest(const ClientRequest& orig);
     virtual ~ClientRequest();
     void decodeRequest(std::stringstream& str );
-    char* decodeRequest(char *b64edata);
+    unique_ptr<string>  decryptRequest(char *b64edata);
 private:
     //std::stringstream str;
    

@@ -7,8 +7,9 @@
 
 
 #include "../../../Helper/Singleton.h"
+#include "../VerificationBehaviour.h"
 
-class VerificationBehaviourCOMM :public Singleton<VerificationBehaviourCOMM> {
+class VerificationBehaviourCOMM :public VerificationBehaviour, public Singleton<VerificationBehaviourCOMM> {
 
 private:friend class Singleton;
     VerificationBehaviourCOMM() : Singleton() { cout<<"VerifBehaviourCOMM obj created"<<endl;}

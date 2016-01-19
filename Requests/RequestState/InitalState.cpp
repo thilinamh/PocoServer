@@ -11,12 +11,18 @@
 __USING_NAMESPACE_STD()
 void InitalState::processRequest(const std::string &data, User &context) {
     std::cout<<"in InitialState "<<std::endl;
-    if (data[0]=='r'){
+    if (data.compare(0,3,"rrq")==0){
         cout<<"reg req"<<endl;
         context.setCurrent_state(RegistrationState::getInstance());
-    }else if(data[0]=='l'){
+        throw std::invalid_argument("forwaded to registration");
+
+    }else if(data.compare(0,3,"uid")==0){
         cout<<"Login req"<<endl;
         context.setCurrent_state(LoginState::getInstance());
+        throw std::invalid_argument("forwaded to login");
+
+    }else{
+        cerr<<"invalid request"<<endl;
     }
 
 }

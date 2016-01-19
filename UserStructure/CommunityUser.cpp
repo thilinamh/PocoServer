@@ -15,8 +15,3 @@ void CommunityUser::bindWithServer() {
   tcpConnection->setContext(shared_from_this());
 }
 
-BehaviourContainer &CommunityUser::getBehaviours() {
-
-    return *(User::_behaviours);
-
-}
