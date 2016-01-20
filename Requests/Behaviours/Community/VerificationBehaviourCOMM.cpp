@@ -28,7 +28,7 @@ bool VerificationBehaviourCOMM::verify(const std::string &verification_num, cons
     ota.setVerif(verification_num.c_str());
     cout << ota.getMessage() << endl;
 
-    strcpy(java_cmd, "java -jar /home/tm/Desktop/Clion/ClionProjects/PocoServer/J/OTP.jar ");
+    strcpy(java_cmd, "java -jar /home/user/Desktop/OTP.jar ");
     strcat(java_cmd, "\"");
     strcat(java_cmd, ota.getMessage());
     strcat(java_cmd, "\"");

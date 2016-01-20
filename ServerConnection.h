@@ -52,6 +52,8 @@ public:
 
     int writeToSocket(const std::string& message);
 
+    void closeSocketConnection() ;
+
 
 private:
     std::shared_ptr<User> context;

@@ -6,7 +6,7 @@
 #define POCOSERVER_REGISTRATIONSTATE_H
 
 #include "State.h"
-//#include "../Behaviours/RegistrationBehavior.h"
+#include <vector>
 #include "../../Helper/Singleton.h"
 
 class RegistrationState :public State, public Singleton<RegistrationState>{
@@ -14,11 +14,11 @@ class RegistrationState :public State, public Singleton<RegistrationState>{
 public:
 
     void processRequest(const std::string &data, User &context) override final;
-
+    unique_ptr<vector<shared_ptr<User>>> waitQue;
 
 private:
     friend class Singleton; // because we are invoking private ctor from template
-    RegistrationState(){cout<<"RegistrationState created "<<endl;};
+    RegistrationState();
     RegistrationState(const RegistrationState& src);
     RegistrationState& operator=(const RegistrationState& rhs);
 

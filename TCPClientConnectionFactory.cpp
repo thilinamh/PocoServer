@@ -25,6 +25,6 @@ TCPServerConnection*  ClientConnectionFactory::createConnection(const StreamSock
 
 
 
-   return dynamic_cast<TCPServerConnection*>(&(usr->getServerConnection()));
+   return dynamic_cast<TCPServerConnection*>(usr->getServerConnection());
 }
 

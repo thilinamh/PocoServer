@@ -10,8 +10,8 @@
 bool RegistrationBehaviourCOMM::registerUser(const string &uid, const string &uuid, const string &extra) {
     cout<<"uid"<< uid <<endl;
     cout<<"uuid"<<uuid<<endl;
-    send_OTP(uid, uuid, extra);
-    return false;
+    return send_OTP(uid, uuid, extra);
+
 }
 
 bool RegistrationBehaviourCOMM::send_OTP(const string &uid, const string &uuid, const string &email) {
@@ -31,7 +31,7 @@ bool RegistrationBehaviourCOMM::send_OTP(const string &uid, const string &uuid, 
     cout << otg.getMessage() << endl;
     cout << "Using OTP ... ";
     char java_cmd[1024];
-    strcpy(java_cmd, "java -jar /home/tm/Desktop/Clion/ClionProjects/PocoServer/J/OTP.jar ");
+    strcpy(java_cmd, "java -jar /home/user/Desktop/OTP.jar ");
     strcat(java_cmd, "\"");
     strcat(java_cmd, otg.getMessage());
     strcat(java_cmd, "\"");
@@ -60,7 +60,8 @@ bool RegistrationBehaviourCOMM::send_OTP(const string &uid, const string &uuid, 
         cerr << "Command execution error !! " << endl;
         return false;
     }
-    char pbuff[128]{};
+    const int BUF_SIZE = 128;
+    char pbuff[BUF_SIZE]{0};
 
 
     while (!feof(f)) {
@@ -68,10 +69,9 @@ bool RegistrationBehaviourCOMM::send_OTP(const string &uid, const string &uuid, 
     }
     pclose(f);
 
-    cout << "OTP Result : " << pbuff << endl;
-    if (strcmp(pbuff, "00") == 0x00 ||
-        strcmp(pbuff, "20") == 0x00 ||
-        strcmp(pbuff, "21") == 0x00) {
+
+    cout << "OTP Result : " << pbuff <<endl;
+    if ( strcmp(pbuff, "20")== 0 || strcmp(pbuff, "00")== 0 /*|| strcmp(pbuff, "20") == 0 */) {
 
         return true;
     }else{

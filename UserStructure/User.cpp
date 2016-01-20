@@ -35,9 +35,9 @@ User::~User() {
     cout << "User deleted" << endl;
 }
 
-ServerConnection &User::getServerConnection() const {
+ServerConnection * User::getServerConnection() const {
 
-    return *tcpConnection;
+    return tcpConnection;
 }
 
 void User::bindWithServer() {
@@ -130,10 +130,20 @@ bool User::registerUser(const string &decrpted_data) {
    return this->_behaviours->getRegistrationBehaviour().registerUser(uid_, uuid, decrpted_data);
 }
 
-bool User::verifyRegistration() {
-    return false;
+bool User::verifyRegistration(const string & verification_num) {
+    return this->_behaviours->getVerificationBehaviour().verify(verification_num,this->uuid);
 }
+
 
 int User::writeToClient(const string &command) {
     this->tcpConnection->writeToSocket(command);
+}
+
+void User::closeSocket() {
+    this->tcpConnection->closeSocketConnection();
+}
+
+void User::renewServerConnection(ServerConnection *tcpCon) {
+    //this->tcpConnection->closeSocketConnection();
+    this->tcpConnection=tcpCon;
 }

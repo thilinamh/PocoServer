@@ -35,11 +35,12 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
             context.setUid((*elements)[0]);
             context.setUuid((*elements)[2]);
 
-            if (context.registerUser((*elements)[1])) {
+            if (context.registerUser((*elements)[1])==true) {
                 context.writeToClient(REG_PENDING);
                 context.setCurrent_state(VerificationState::getInstance());
 
             } else {
+                cout<<"reg failed"<<endl;
                 context.writeToClient(REG_ERROR);
                 context.setCurrent_state(InitalState::getInstance());
 
@@ -51,11 +52,21 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
         } catch (std::invalid_argument &e) {
             cout << e.what() << endl;
         } catch (...) {
-            cout << "error Registering" << endl;
+            cout << "error Registering" <<endl;
         }
+
+
+
+    } else if (data.compare(0, 3, "sht") == 0){
+        waitQue->push_back(context.shared_from_this());
+        context.closeSocket();
+
     } else {
         context.setCurrent_state(InitalState::getInstance());
         throw std::invalid_argument("forwaded to initial state");
     }
 }
 
+RegistrationState::RegistrationState() :waitQue(new vector<shared_ptr<User>>()){
+    cout<<"reg state init"<<endl;
+}

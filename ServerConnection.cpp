@@ -107,3 +107,7 @@ void ServerConnection::run() {
 int ServerConnection::writeToSocket(const std::string &message) {
     return this->socket().sendBytes(message.c_str(),message.size());
 }
+
+void ServerConnection::closeSocketConnection() {
+    this->socket().close();
+}

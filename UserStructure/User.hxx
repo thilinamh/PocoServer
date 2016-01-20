@@ -34,7 +34,7 @@ public:
      * */
     virtual void bindWithServer();
 
-    ServerConnection& getServerConnection() const;
+    ServerConnection * getServerConnection() const;
 
     const string & getUid() const;
 
@@ -44,7 +44,7 @@ public:
 
     void setUuid(const string &uuid);
     bool registerUser(const string &decrpted_data);
-    bool verifyRegistration();
+    bool verifyRegistration(const string &verification_num);
     bool login();
 
     virtual bool save();
@@ -54,9 +54,11 @@ public:
     void setCurrent_state(State &state) ;
     //virtual BehaviourContainer & getBehaviours();
     int writeToClient(const string &command);
+    void closeSocket();
+    void renewServerConnection(ServerConnection* tcpCon);
 protected:
     unique_ptr<BehaviourContainer> _behaviours;
-    ServerConnection* tcpConnection; //do not own the object
+    ServerConnection* tcpConnection; //User do not own the object
     User(); //reserved for odb
 
 private:
