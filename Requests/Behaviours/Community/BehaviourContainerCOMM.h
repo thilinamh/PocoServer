@@ -14,11 +14,16 @@ class BehaviourContainerCOMM:public BehaviourContainer {
 
 public:
     RegistrationBehavior &getRegistrationBehaviour()  override final;
+
+    virtual VerificationBehaviour &getVerificationBehaviour() override final;
+
     void pass();
 
-private:
-    RegistrationBehaviourCOMM* regBehaviour;
-    VerificationBehaviourCOMM* verfyBehaviour;
+
+
+
+
+
 };
 
 

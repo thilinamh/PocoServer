@@ -10,8 +10,10 @@
 #include "../VerificationBehaviour.h"
 
 class VerificationBehaviourCOMM :public VerificationBehaviour, public Singleton<VerificationBehaviourCOMM> {
-
-private:friend class Singleton;
+public:
+    bool verify(const std::string &verification_num, const std::string &uuid) override final;
+private:
+    friend class Singleton;
     VerificationBehaviourCOMM() : Singleton() { cout<<"VerifBehaviourCOMM obj created"<<endl;}
 };
 

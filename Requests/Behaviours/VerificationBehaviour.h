@@ -11,7 +11,7 @@ using namespace std;
 class VerificationBehaviour {
 
 public:
-    virtual bool verify(const std::string &verification_num, const std::string &uuid);
+    virtual bool verify(const std::string &verification_num, const std::string &uuid)=0;
 
 };
 

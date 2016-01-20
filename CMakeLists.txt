@@ -26,7 +26,7 @@ set(SOURCE_FILES
         Helper/OTP/OTPBase.h Helper/OTP/OTPBase.cpp
         Helper/OTP/OTPBase.h Helper/OTP/OTPAuthRequest.h
         Helper/OTP/OTPBase.h Helper/OTP/OTPAuthRequest.cpp
-        Helper/Crypto.cpp Helper/Crypto.h Helper/StringHelper.cpp Helper/StringHelper.h Requests/Behaviours/VerificationBehaviour.cpp Requests/Behaviours/VerificationBehaviour.h)
+        Helper/Crypto.cpp Helper/Crypto.h Helper/StringHelper.cpp Helper/StringHelper.h Requests/Behaviours/VerificationBehaviour.cpp Requests/Behaviours/VerificationBehaviour.h  Requests/Behaviours/Enterprise/VerificationBehaviourENT.cpp Requests/Behaviours/Enterprise/VerificationBehaviourENT.h)
 add_executable(PocoServer ${SOURCE_FILES})
 
 #INCLUDE_DIRECTORIES(/usr/local/include/odb)

@@ -90,13 +90,14 @@ void ServerConnection::run() {
         }catch(std::invalid_argument& e){
             cout<<e.what()<<endl;
         }
+
+*/
         if (bytesReceived ==0) {
             //exit = true;
             this->socket().close();
             std::cout << "No data" << endl;
         }
 
-*/
         //int val=this->socket().sendBytes(reinterpret_cast<void*> (buf), BUF_SIZE-1);
         //if (val<0)
     }

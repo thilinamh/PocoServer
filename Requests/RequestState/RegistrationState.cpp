@@ -12,11 +12,11 @@
 #include "VerificationState.h"
 
 void RegistrationState::processRequest(const std::string &data, User &context) {
-    std::cout<<"in Registration "<<data<<std::endl;
+    std::cout << "in Registration " << data << std::endl;
 
-    if (data.compare(0,3,"rrq")==0){
+    if (data.compare(0, 3, "rrq") == 0) {
 
-        string encrypted=data.substr(4); //take data part
+        string encrypted = data.substr(4); //take data part
         try {
             /*BehaviourContainer* a= &context.getBehaviours();
             if(a== nullptr){
@@ -27,29 +27,33 @@ void RegistrationState::processRequest(const std::string &data, User &context) {
             unique_ptr<string> decodedStr = Crypto::decryptRequest(&encrypted[0]);
 
 
-            auto elements =StringHelper::split(*decodedStr,',');
+            auto elements = StringHelper::split(*decodedStr, ',');
 
-            for (string x:*elements){
-                cout<<x<<endl;
+            for (string x:*elements) {
+                cout << x << endl;
             }
             context.setUid((*elements)[0]);
             context.setUuid((*elements)[2]);
 
-            if(context.registerUser((*elements)[1])){
+            if (context.registerUser((*elements)[1])) {
                 context.writeToClient(REG_PENDING);
                 context.setCurrent_state(VerificationState::getInstance());
 
-            } else{
+            } else {
                 context.writeToClient(REG_ERROR);
                 context.setCurrent_state(InitalState::getInstance());
 
             }
 
             //context.save();
+        } catch (std::bad_exception &e) {
+            cout << e.what() << endl;
+        } catch (std::invalid_argument &e) {
+            cout << e.what() << endl;
         } catch (...) {
-            cout << "error saving" << endl;
+            cout << "error Registering" << endl;
         }
-    }else{
+    } else {
         context.setCurrent_state(InitalState::getInstance());
         throw std::invalid_argument("forwaded to initial state");
     }

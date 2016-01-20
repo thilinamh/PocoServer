@@ -5,12 +5,19 @@
 #include "BehaviourContainerCOMM.h"
 
 RegistrationBehavior &BehaviourContainerCOMM::getRegistrationBehaviour()  {
-    if(regBehaviour== nullptr){
-        regBehaviour=&RegistrationBehaviourCOMM::getInstance();
+    if(BehaviourContainer::regBehaviour== nullptr){
+        BehaviourContainer::regBehaviour=&RegistrationBehaviourCOMM::getInstance();
     }
-    return *regBehaviour;
+    return *BehaviourContainer::regBehaviour;
 }
 
 void BehaviourContainerCOMM::pass() {
 
+}
+
+VerificationBehaviour &BehaviourContainerCOMM::getVerificationBehaviour() {
+    if(BehaviourContainer::verificationBehaviour== nullptr){
+        BehaviourContainer::verificationBehaviour=&VerificationBehaviourCOMM::getInstance();
+    }
+    return *BehaviourContainer::verificationBehaviour;
 }

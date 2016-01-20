@@ -27,12 +27,16 @@
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/RegistrationBehaviourCOMM.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/VerificationBehaviourCOMM.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/VerificationBehaviourCOMM.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/VerificationBehaviourCommunity.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Community/VerificationBehaviourCommunity.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/BehaviourContainerENT.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/BehaviourContainerENT.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/ConferenceBehaviourENT.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/ConferenceBehaviourENT.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/RegistrationBehaviourENT.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/RegistrationBehaviourENT.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/VerificationBehaviourENT.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/Enterprise/VerificationBehaviourENT.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/RegistrationBehavior.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Requests/Behaviours/VerificationBehaviour.cpp" isTestSource="false" />
